@@ -8,7 +8,6 @@ import mongoSanitize from "express-mongo-sanitize";
 import rateLimit from "express-rate-limit";
 import morgan from "morgan";
 import connectDB from "./db/connectDB.js";
-// import userRoutes from "./routes/user.routes.js";
 import {
   globalErrorHandler,
   notFoundMiddleware,
@@ -68,9 +67,6 @@ app.get("/", (req, res) => {
     },
   });
 });
-
-// User-related API routes
-// app.use("/api/v1/user", userRoutes);
 
 // Catch all undefined routes and forward them to the error handler
 app.all("*", notFoundMiddleware);
